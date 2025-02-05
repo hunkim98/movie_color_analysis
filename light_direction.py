@@ -74,7 +74,7 @@ def get_light_direction_3x3(image_path):
 # ---------------- Sample Usage ----------------
 
 if __name__ == "__main__":
-    movie_name = "vanessa_trick"
+    movie_name = "llm"
     main_dir = f"./output/videos/{movie_name}/frames"
 
     folders = os.listdir(main_dir)

@@ -261,7 +261,7 @@ def process_frames(directory):
 
 
 if __name__ == "__main__":
-    video_name = "vanessa_trick"
+    video_name = "llm"
     all_dirs = os.listdir(f"output/videos/{video_name}/frames")
     for dir in all_dirs:
         print(dir)

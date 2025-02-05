@@ -48,7 +48,8 @@ def split_video_to_chunks(video_path: str, output_dir: str, chunk_duration: int 
 
         # Extract and save the audio for this chunk
         audio_path = os.path.join(audio_dir, f"chunk_{i:03d}.wav")
-        subclip.audio.write_audiofile(audio_path)
+        if subclip.audio is not None:
+            subclip.audio.write_audiofile(audio_path)
 
         # Duration of this subclip (might be less than chunk_duration if it's the last chunk)
         chunk_length = end_time - start_time
@@ -73,7 +74,7 @@ def split_video_to_chunks(video_path: str, output_dir: str, chunk_duration: int 
 
 if __name__ == "__main__":
     # Example usage:
-    video_input = "data/videos/prince.mp4"  # Replace with your actual video path
+    video_input = "data/videos/llm.mp4"  # Replace with your actual video path
     output_folder = "output_chunks"
 
     split_video_to_chunks(video_input, output_folder, chunk_duration=10)
